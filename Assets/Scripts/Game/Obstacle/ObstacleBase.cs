@@ -12,14 +12,11 @@ public class ObstacleBase : MonoBehaviour
 
 		if ( isInstantDeath )
 		{
-            Debug.Log("플레이어 사망");
-			// collision.GetComponent<PlayerHP>().DecreaseHP(3);
+			collision.GetComponent<PlayerHP>().DecreaseHP(3);
 		}
 		else
 		{
-            Debug.Log("플레이어 체력 감소");
-            
-			// collision.GetComponent<PlayerHP>().DecreaseHP();
+			collision.GetComponent<PlayerHP>().DecreaseHP();
 		}
 	}
 }

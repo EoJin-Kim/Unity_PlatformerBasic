@@ -887,6 +887,8 @@ GameObject:
   - component: {fileID: 1009849384}
   - component: {fileID: 1009849388}
   - component: {fileID: 1009849387}
+  - component: {fileID: 1009849389}
+  - component: {fileID: 1009849390}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1015,6 +1017,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   jumpKeyCode: 99
   stageData: {fileID: 11400000, guid: 624624da1fd0c1746976b2e677deaeaf, type: 2}
+--- !u!114 &1009849389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009849383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f636a5ac85514934e92486fb98ac0674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+--- !u!114 &1009849390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009849383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fea2e57367627845a7097c2eea9b6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHP
+  max: 3
 --- !u!1 &1168792250
 GameObject:
   m_ObjectHideFlags: 0
