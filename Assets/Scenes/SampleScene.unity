@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 784022301}
   - component: {fileID: 784022302}
   - component: {fileID: 784022303}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,6 +874,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868762497}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &962327120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 962327121}
+  m_Layer: 10
+  m_Name: ProjectileSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &962327121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962327120}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1009849386}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009849383
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +920,8 @@ GameObject:
   - component: {fileID: 1009849387}
   - component: {fileID: 1009849389}
   - component: {fileID: 1009849390}
-  m_Layer: 0
+  - component: {fileID: 1009849391}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -975,6 +1007,7 @@ Transform:
   m_Children:
   - {fileID: 784022300}
   - {fileID: 1845986011}
+  - {fileID: 962327121}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1009849387
@@ -1016,6 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   jumpKeyCode: 99
+  fireKeyCode: 122
   stageData: {fileID: 11400000, guid: 624624da1fd0c1746976b2e677deaeaf, type: 2}
 --- !u!114 &1009849389
 MonoBehaviour:
@@ -1042,6 +1076,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHP
   max: 3
+--- !u!114 &1009849391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009849383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e989baf3105437ea8114b9fdaed76f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWeapon
+  projectile: {fileID: 4573698451502045610, guid: b8437eb30ad215546b36cfa6c6124f24, type: 3}
+  spawnPoint: {fileID: 962327121}
 --- !u!1 &1168792250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1342,7 @@ GameObject:
   - component: {fileID: 1684533030}
   - component: {fileID: 1684533032}
   - component: {fileID: 1684533031}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FootStepEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6130,7 +6178,7 @@ GameObject:
   - component: {fileID: 1708737443}
   - component: {fileID: 1708737445}
   - component: {fileID: 1708737444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LandingEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11023,7 +11071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845986011}
   - component: {fileID: 1845986012}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MovementEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11241,6 +11289,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4988442590358276833, guid: 14b17fe52bc992a4697d988b34641ef4, type: 3}
+      propertyPath: starIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283264482558842185, guid: 14b17fe52bc992a4697d988b34641ef4, type: 3}
+      propertyPath: starIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5702351907872818658, guid: 14b17fe52bc992a4697d988b34641ef4, type: 3}
       propertyPath: m_Name
       value: Level01

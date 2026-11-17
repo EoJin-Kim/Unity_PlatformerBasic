@@ -7,6 +7,8 @@ public class PlayerData : MonoBehaviour
 
 	private	int				coin = 0;
 	private	int				projectile = 0;
+
+    [SerializeField]
 	private	bool[]			stars = new bool[3] { false, false, false };
 
 	public int Coin
@@ -21,25 +23,25 @@ public class PlayerData : MonoBehaviour
 	}
 
 	// get만 가능한 property이기 때문에 readonly/const와 같이 수정 불가능
-	// public int MaxProjectile { get; } = 10;
+	public int MaxProjectile { get; } = 10;
 
-	// public int CurrentProjectile
-	// {
-	// 	set
-	// 	{
-	// 		projectile = Mathf.Clamp(value, 0, MaxProjectile);
+	public int CurrentProjectile
+	{
+		set
+		{
+			projectile = Mathf.Clamp(value, 0, MaxProjectile);
 
-	// 		uiPlayerData.SetProjectile(projectile, MaxProjectile);
-	// 	}
-	// 	get => projectile;
-	// }
+			// uiPlayerData.SetProjectile(projectile, MaxProjectile);
+		}
+		get => projectile;
+	}
 
-	// public void GetStar(int index)
-	// {
-	// 	stars[index] = true;
+	public void GetStar(int index)
+	{
+		stars[index] = true;
 
-	// 	uiPlayerData.SetStar(index);
-	// }
+		// uiPlayerData.SetStar(index);
+	}
 
 	// private void Awake()
 	// {

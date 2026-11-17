@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5552868363988582293}
   - component: {fileID: 7772547387099994139}
   - component: {fileID: 8803289817022404370}
-  m_Layer: 0
+  - component: {fileID: -1223649095758340001}
+  m_Layer: 11
   m_Name: Player_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,6 +139,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d152b3f134944f243ae358cb5de92842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerProjectile
+--- !u!114 &-1223649095758340001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573698451502045610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65aea2aed169431eadea9d2bec2e827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoDestroyer
+  onlyDeactivate: 1
+  destroyTime: 2
 --- !u!1 &4918585721070828333
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5436417331089358135}
   - component: {fileID: 635572905347593556}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7250491845087773625}
   - component: {fileID: 5048880407855757125}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
