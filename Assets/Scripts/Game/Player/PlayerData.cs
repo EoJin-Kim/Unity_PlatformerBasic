@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-	// [SerializeField]
-	// private	UIPlayerData	uiPlayerData;
+	[SerializeField]
+	private	UIPlayerData	uiPlayerData;
 
 	private	int				coin = 0;
 	private	int				projectile = 0;
@@ -17,7 +17,7 @@ public class PlayerData : MonoBehaviour
 		{
 			coin = Mathf.Clamp(value, 0, 9999);
 
-			// uiPlayerData.SetCoin(coin);
+			uiPlayerData.SetCoin(coin);
 		}
 		get => coin;
 	}
@@ -31,7 +31,7 @@ public class PlayerData : MonoBehaviour
 		{
 			projectile = Mathf.Clamp(value, 0, MaxProjectile);
 
-			// uiPlayerData.SetProjectile(projectile, MaxProjectile);
+			uiPlayerData.SetProjectile(projectile, MaxProjectile);
 		}
 		get => projectile;
 	}
@@ -40,13 +40,13 @@ public class PlayerData : MonoBehaviour
 	{
 		stars[index] = true;
 
-		// uiPlayerData.SetStar(index);
+		uiPlayerData.SetStar(index);
 	}
 
-	// private void Awake()
-	// {
-	// 	Coin				= 0;
-	// 	CurrentProjectile	= 0;
-	// }
+	private void Awake()
+	{
+		Coin				= 0;
+		CurrentProjectile	= 0;
+	}
 }
 

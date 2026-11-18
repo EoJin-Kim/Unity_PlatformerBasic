@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerHP : MonoBehaviour
 {
-	// [SerializeField]
-	// private	UIPlayerData	uiPlayerData;
+	[SerializeField]
+	private	UIPlayerData	uiPlayerData;
 	[SerializeField]
 	private int max = 3;    // 최대 체력
 	private int current;    // 현재 체력
@@ -30,7 +30,7 @@ public class PlayerHP : MonoBehaviour
 		OnInvincibility(1);
 
 		current = current > 0 ? current - decreaseHP : 0;
-		// uiPlayerData.SetHP(current);
+		uiPlayerData.SetHP(current);
 
 		if (current <= 0)
 		{
@@ -41,7 +41,7 @@ public class PlayerHP : MonoBehaviour
 	public void IncreaseHP(int increaseHP=1)
 	{
 		current = current < max ? current + increaseHP : max;
-		// uiPlayerData.SetHP(current);
+		uiPlayerData.SetHP(current);
 	}
 
 	public void OnInvincibility(float time)
