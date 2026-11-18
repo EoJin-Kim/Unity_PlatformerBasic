@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
+using TMPro;
+using UnityEngine.UI;
 
 public static class FadeEffect
 {
@@ -45,5 +47,46 @@ public static class FadeEffect
 
         action?.Invoke();
     }
+
+
+	public static IEnumerator Fade(TextMeshProUGUI target, float start, float end, float fadeTime=1, UnityAction action=null)
+	{
+		if ( target == null ) yield break;
+
+		float percent = 0;
+
+		while ( percent < 1 )
+		{
+			percent += Time.deltaTime / fadeTime;
+
+			Color color	 = target.color;
+			color.a		 = Mathf.Lerp(start, end, percent);
+			target.color = color;
+
+			yield return null;
+		}
+
+		action?.Invoke();
+	}
+
+	public static IEnumerator Fade(Image target, float start, float end, float fadeTime=1, UnityAction action=null)
+	{
+		if ( target == null ) yield break;
+
+		float percent = 0;
+
+		while ( percent < 1 )
+		{
+			percent += Time.deltaTime / fadeTime;
+
+			Color color	 = target.color;
+			color.a		 = Mathf.Lerp(start, end, percent);
+			target.color = color;
+
+			yield return null;
+		}
+
+		action?.Invoke();
+	}
 }
 
