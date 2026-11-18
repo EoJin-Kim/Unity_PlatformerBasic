@@ -42,6 +42,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4312140896797536694}
+  - component: {fileID: 7001847169740317921}
+  - component: {fileID: 1594838124137229920}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -64,6 +66,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9159355743052570517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7001847169740317921
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934757437568410378}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!114 &1594838124137229920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934757437568410378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda7ff5bf68064e8788d6b29c66b962d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCollider
 --- !u!1 &3403771157251086321
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7816066972599447262}
   - component: {fileID: 6447493797765204467}
+  - component: {fileID: 5370677528784366773}
   m_Layer: 0
   m_Name: Renderer
   m_TagString: Untagged
@@ -98,6 +149,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6447493797765204467
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -116,6 +168,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -137,9 +191,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -614543840, guid: 7f341a83a2f8e46458232f903ef73fd2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -149,8 +205,29 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5370677528784366773
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3403771157251086321}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5cda59f778f884e809b9c17da5aa920f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3887069114231970536
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +268,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5228260134863800692}
+  - component: {fileID: 6904078210134632476}
+  - component: {fileID: 9217367718693211114}
   m_Layer: 0
   m_Name: Enemy_00
   m_TagString: Untagged
@@ -216,6 +295,36 @@ Transform:
   - {fileID: 7953782565819525169}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6904078210134632476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065624500846195807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7f8332fbd014548a5b619931075cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowPath
+  target: {fileID: 9159355743052570517}
+  wayPoints:
+  - {fileID: 1067212910011130403}
+  - {fileID: 7953782565819525169}
+  waitTime: 1
+  timeOffset: 0.5
+--- !u!114 &9217367718693211114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065624500846195807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a72f121f01c7411688e130fca781939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMushroom
 --- !u!1 &6275494395581697213
 GameObject:
   m_ObjectHideFlags: 0

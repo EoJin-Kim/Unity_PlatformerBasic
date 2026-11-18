@@ -5,24 +5,45 @@ using UnityEngine.Tilemaps;
 
 public static class FadeEffect
 {
-	public static IEnumerator Fade(Tilemap target, float start, float end, float fadeTime=1, UnityAction action=null)
-	{
-		if ( target == null ) yield break;
+    public static IEnumerator Fade(Tilemap target, float start, float end, float fadeTime = 1, UnityAction action = null)
+    {
+        if (target == null) yield break;
 
-		float percent = 0;
+        float percent = 0;
 
-		while ( percent < 1 )
-		{
-			percent += Time.deltaTime / fadeTime;
+        while (percent < 1)
+        {
+            percent += Time.deltaTime / fadeTime;
 
-			Color color	 = target.color;
-			color.a		 = Mathf.Lerp(start, end, percent);
-			target.color = color;
+            Color color = target.color;
+            color.a = Mathf.Lerp(start, end, percent);
+            target.color = color;
 
-			yield return null;
-		}
+            yield return null;
+        }
 
-		action?.Invoke();
-	}
+        action?.Invoke();
+    }
+
+
+    public static IEnumerator Fade(SpriteRenderer target, float start, float end, float fadeTime = 1, UnityAction action = null)
+    {
+        if (target == null) yield break;
+
+        float percent = 0;
+
+        while (percent < 1)
+        {
+            percent += Time.deltaTime / fadeTime;
+
+            Color color = target.color;
+            color.a = Mathf.Lerp(start, end, percent);
+            target.color = color;
+
+            yield return null;
+        }
+
+        action?.Invoke();
+    }
 }
 
