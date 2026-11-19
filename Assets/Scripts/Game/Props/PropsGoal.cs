@@ -6,7 +6,7 @@ public class PropsGoal : MonoBehaviour
 	{
 		if ( collision.CompareTag("Player") )
 		{
-			Debug.Log("Game Clear");
+			collision.GetComponent<PlayerController>().LevelComplete();
 		}
 	}
 }
